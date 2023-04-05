@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Streaming Example</title>
+</head>
+<body>
+  <h1>Video Streaming Example</h1>
+
+  <video id="video-player" width="640" height="360" controls>
+    <source id="video-source" src="" type="video/mp4">
+  </video>
+
+  <button id="play-button">Play</button>
+  <button id="pause-button">Pause</button>
+
+  <script>
+    const videoPlayer = document.getElementById('video-player');
+    const videoSource = document.getElementById('video-source');
+    const playButton = document.getElementById('play-button');
+    const pauseButton = document.getElementById('pause-button');
+
+    // Replace "localhost" with your server's IP or domain name
+    const videoUrl = 'http://localhost:3000/stream/sample.mp4';
+
+    // Set the video source URL to the server's streaming endpoint
+    videoSource.src = videoUrl;
+
+    // Play the video when the "Play" button is clicked
+    playButton.addEventListener('click', () => {
+      videoPlayer.play();
+    });
+
+    // Pause the video when the "Pause" button is clicked
+    pauseButton.addEventListener('click', () => {
+      videoPlayer.pause();
+    });
+  </script>
+</body>
+</html>
